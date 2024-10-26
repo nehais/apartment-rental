@@ -1,7 +1,8 @@
+import Logo from "../assets/Logo.png"
 const Navbar = () => {
   return (
     <div className="navbar">
-      <img src="" alt="Apartment Rental Logo"></img>
+      <img src={Logo} alt="Apartment Rental Logo" className="app-logo"></img>
       <span> Apartment Rental</span>
     </div>
   );
