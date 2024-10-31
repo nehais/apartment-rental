@@ -1,6 +1,7 @@
 import "../styles/HomePage.css";
 
 import Footer from "./Footer";
+import MainContent from "./MainContent";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
@@ -8,7 +9,10 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <Sidebar />
+      <div className="content">
+        <Sidebar />
+        <MainContent/>
+      </div>
       <Footer />
     </>
   );

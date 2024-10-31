@@ -3,7 +3,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <img src={Logo} alt="Apartment Rental Logo" className="app-logo"></img>
-      <span> Apartment Rental</span>
+      <span> Nest & Rest</span>
     </div>
   );
 };

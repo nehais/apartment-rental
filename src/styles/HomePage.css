@@ -1,11 +1,38 @@
 .navbar{
-    background-color: aqua;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    background-color: rgb(121, 118, 118);
+    font-weight: bold;
+    color: white;
+}
+
+.content{
+    display: flex;
+    height: 83%;
+    background-color: rgb(156, 153, 153);
 }
 
 .sidebar{
-    background-color: blueviolet;
+    width: 10%;
+}
+
+.main-content{
+    width: 90%;
 }
 
 .footer{
-    background-color: brown;
+    height: 7%;
+}
+
+.app-logo{
+    height: 50px;
+    width: 80px;
+}
+
+.git-logo{
+    height: 50px;
+    width: 80px;
 }
