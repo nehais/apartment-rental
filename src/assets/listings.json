@@ -1,5 +1,4 @@
-{
-  "results": [
+[
     {
       "id": 21853,
       "listing_url": "https://www.airbnb.com/rooms/21853",
@@ -12161,5 +12160,5 @@
       "calculated_host_listings_count_shared_rooms": 0,
       "reviews_per_month": 0.33
     }
-  ]
-}
+  
+]

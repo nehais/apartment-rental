@@ -21,6 +21,19 @@
 
 .main-content{
     width: 90%;
+    display: flex;
+}
+
+.rental-card{
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.rent-picture{
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
 }
 
 .footer{
