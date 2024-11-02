@@ -1,82 +1,93 @@
-.navbar{
-    height: 10%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 20px;
-    background-color: #cccbcb;
-    font-weight: bold;
-    color: white;
+.navbar {
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  background-color: #cccbcb;
+  font-weight: bold;
+  color: white;
 }
 
-.content{
-    display: flex;
-    height: 83%;
-    background-color: white;
+.content {
+  display: flex;
+  height: 83%;
+  background-color: white;
 }
 
-.sidebar{
-    width: 10%;
+.sidebar {
+  width: 10%;
 }
 
-.main-content{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.main-content {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
-.rental-card{
-    width: 400px;
-    margin: 20px 20px 0 0;
-    text-align: left;
-    background-color: #a2b39c2a;
-    border-radius: 0 0 5px 5px;
+.rental-card {
+  width: 400px;
+  margin: 20px 20px 0 0;
+  text-align: left;
+  background-color: #a2b39c2a;
+  border-radius: 0 0 5px 5px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    h3, h4, p{
-        margin: 0;
-    }
-    position: relative;
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+  position: relative;
 }
 
-.rent-picture{
-    width: 400px;
-    height: 350px;
-    border-radius: 5px 5px 0 0;
-    margin-bottom: 10px;
+.rent-picture {
+  width: 400px;
+  height: 350px;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 10px;
 }
 
-.delete-button{
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    background-image: url('../assets/x.png');
-    background-size: 20px;
+.delete-button {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background-image: url("../assets/x.png");
+  background-size: 20px;
 
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
 
-    cursor: pointer;
+  cursor: pointer;
+}
+.details {
+  width: 400px;
+  margin: 20px 20px 0 0;
+  text-align: left;
+  background-color: #a2b39c2a;
+  border-radius: 0 0 5px 5px;
+}
+.footer {
+  height: 7%;
+  background-color: #cccbcb;
 }
 
-.footer{
-    height: 7%;
-    background-color: #cccbcb;
+.app-logo {
+  height: 50px;
+  width: 80px;
 }
 
-.app-logo{
-    height: 50px;
-    width: 80px;
+.git-logo {
+  height: 50px;
+  width: 80px;
 }
-
-.git-logo{
-    height: 50px;
-    width: 80px;
+.notfound {
+  margin-top: 100px;
 }
