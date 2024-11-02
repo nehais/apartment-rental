@@ -4,7 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 20px;
-    background-color: rgb(121, 118, 118);
+    background-color: #cccbcb;
     font-weight: bold;
     color: white;
 }
@@ -12,7 +12,7 @@
 .content{
     display: flex;
     height: 83%;
-    background-color: rgb(156, 153, 153);
+    background-color: white;
 }
 
 .sidebar{
@@ -29,19 +29,30 @@
 }
 
 .rental-card{
-    width: 500px;
-    height: 550px;
+    width: 400px;
     margin: 20px 20px 0 0;
+    text-align: left;
+    background-color: #a2b39c2a;
+    border-radius: 0 0 5px 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    h3, h4, p{
+        margin: 0;
+    }
 }
 
 .rent-picture{
     width: 400px;
     height: 350px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .footer{
     height: 7%;
+    background-color: #cccbcb;
 }
 
 .app-logo{
