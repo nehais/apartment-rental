@@ -9,7 +9,7 @@ const MainContent = () => {
     <div className="main-content">
       {
         apartList.map((apartment) =>{
-          return (<RentalCard  key = {apartment.id} apartment = {apartment} />)
+          return (<RentalCard  key = {apartment.id} apartment={apartment} apartList={apartList} setApartList={setApartList}/>)
         })
       }
     </div>
