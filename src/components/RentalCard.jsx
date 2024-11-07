@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function RentalCard({ apartment, apartList, setApartList }) {
   return (
     <div className="rental-card">
-      <Link to="/rentalDetails">
+      <Link to={`/rentalDetails/${apartment.id}`}>
         <img src={apartment.picture_url} alt="" className="rent-picture" />
         <h3>{apartment.name}</h3>
         <p>Hosted at {apartment.host_location}</p>
