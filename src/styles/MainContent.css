@@ -9,7 +9,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
-  font-style: normal
+  font-style: normal;
 }
 
 .content {
@@ -18,7 +18,7 @@
   background-color: white;
 }
 
-.sidebar {  
+.sidebar {
   font-size: 1.5em;
   padding-top: 20px;
   width: 10%;

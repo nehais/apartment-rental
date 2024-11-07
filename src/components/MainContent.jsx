@@ -1,7 +1,8 @@
+import "../styles/MainContent.css";
+
+import { useState } from "react";
 import ApartmentListings from "../assets/listings.json";
 import RentalCard from "./RentalCard";
-import { useState } from "react";
-import RentalDetails from "./RentalDetails";
 
 const MainContent = () => {
   const [apartList, setApartList] = useState(ApartmentListings);
