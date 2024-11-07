@@ -95,6 +95,19 @@
   height: 50px;
   width: 80px;
 }
+
 .notfound {
   margin-top: 100px;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-home {
+  color: white;
+  background-color: #14404d;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
