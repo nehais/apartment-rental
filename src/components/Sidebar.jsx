@@ -4,7 +4,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <Link to="/"> Home </Link>
-      <Link to="/aboutus"> About </Link>
+      <Link to="/aboutUs"> About </Link>
     </div>
   );
 };
