@@ -125,22 +125,32 @@
 }
 
 .git-logo {
+  margin: 0px 20px;
   height: 50px;
   width: 80px;
 }
 
+.in-logo {
+  width: 50px;
+}
+
 .about-us {
+  text-align: center;
   display: flex;
-  width: 100vw;
+  width: 50vw;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  p {
+    width: 80%;
+  }
 }
 
 .about-user {
   display: flex;
-  width: 10vw;
+  width: 50%;
   justify-content: space-between;
+  align-items: center;
 }
 .notfound {
   margin-top: 100px;
@@ -279,6 +289,10 @@
 @media screen and (max-device-width: 425px) {
   .sidebar {
     display: none;
+  }
+
+  .about-us {
+    width: 100%;
   }
 
   .main-content {
