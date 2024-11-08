@@ -21,105 +21,158 @@ const AddNewListing = () => {
   const handleBathrooms = (e) => setBathrooms(e.target.value);
   const handleBedrooms = (e) => setBedrooms(e.target.value);
   return (
-    <div>
+    <div className="add-list-area">
       <form className="AddListing">
-        <span>Add a New Listing</span>
-        <div>
-          <label>
-            Apartment Image
-            <input
-              name="picture_Url"
-              type="url"
-              placeholder="Apartment Image"
-              value={picture_Url}
-              onChange={handlePicture_Url}
-            />
-          </label>
-          <label>
-            Apartment Name
-            <input
-              name="title"
-              type="text"
-              placeholder="Property Title"
-              value={name}
-              onChange={handleName}
-            />
-          </label>
-          <label>
-            Host Location
-            <input
-              name="host_Location"
-              type="text"
-              placeholder="Host Location"
-              value={host_Location}
-              onChange={handleHost_Location}
-            />
-          </label>
-          <label>
-            Host Name
-            <input
-              name="host_name"
-              type="text"
-              placeholder="Host Name"
-              value={host_Name}
-              onChange={handleHost_Name}
-            />
-          </label>
+        <h2>Add a New Listing</h2>
+        <div className="form-fields">
+          <div className="row">
+            <div className="col-25">
+              <label for="name">Apartment Name</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Apartment Title"
+                value={name}
+                onChange={handleName}
+              />
+            </div>
+          </div>
 
-          <label>
-            Property Description
-            <input
-              name="description"
-              type="text"
-              placeholder="Apartment Description"
-              value={description}
-              onChange={handleDescription}
-            />
-          </label>
-          <label>
-            Property Type
-            <select
-              name="property_Type"
-              onChange={handleProperty_Type}
-              value={property_Type}
-            >
-              <option value="Private Room">Private Room</option>
-              <option value="Whole Apartment">Whole Apartment</option>
-            </select>
-          </label>
-          <label>
-            Accomodates
-            <input
-              name="accommodates"
-              type="number"
-              placeholder="1"
-              value={accommodates}
-              onChange={handleAccommodates}
-            />
-          </label>
+          <div className="row">
+            <div className="col-25">
+              <label for="property_Type">Apartment Type</label>
+            </div>
+            <div className="col-75">
+              <select
+                id="property_Type"
+                name="property_Type"
+                value={property_Type}
+                onChange={handleProperty_Type}
+              >
+                <option value="Private Room">Private Room</option>
+                <option value="Whole Apartment">Whole Apartment</option>
+              </select>
+            </div>
+          </div>
 
-          <label>
-            Bathrooms
-            <input
-              name="bathrooms"
-              type="number"
-              placeholder="1"
-              value={bathrooms}
-              onChange={handleBathrooms}
-            />
-          </label>
-          <label>
-            Bedrooms
-            <input
-              name="bedrooms"
-              type="number"
-              placeholder="1"
-              value={bedrooms}
-              onChange={handleBedrooms}
-            />
-          </label>
+          <div className="row">
+            <div className="col-25">
+              <label for="picture_Url">Apartment Image</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="picture_Url"
+                name="picture_Url"
+                placeholder="Apartment Image URL"
+                value={picture_Url}
+                onChange={handlePicture_Url}
+              />
+            </div>
+          </div>
 
-          <button type="submit">Add Property</button>
+          <div className="row">
+            <div className="col-25">
+              <label for="description">Apartment Description</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Apartment Description"
+                value={description}
+                onChange={handleDescription}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-25">
+              <label for="accommodates">Accomodates</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="number"
+                id="accommodates"
+                name="accommodates"
+                placeholder="Apartment Accommodation No."
+                value={accommodates}
+                onChange={handleAccommodates}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-25">
+              <label for="bathrooms">Bathrooms</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="number"
+                id="bathrooms"
+                name="bathrooms"
+                placeholder="No. of Bathrooms"
+                value={bathrooms}
+                onChange={handleBathrooms}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-25">
+              <label for="bedrooms">Bedrooms</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="number"
+                id="bedrooms"
+                name="bedrooms"
+                placeholder="No. of Bedrooms"
+                value={bedrooms}
+                onChange={handleBedrooms}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-25">
+              <label for="host_Location">Host Location</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="host_Location"
+                name="host_Location"
+                placeholder="Host Location"
+                value={host_Location}
+                onChange={handleHost_Location}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-25">
+              <label for="host_Name">Host Name</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="host_Name"
+                name="host_Name"
+                placeholder="Host Name"
+                value={host_Name}
+                onChange={handleHost_Name}
+              />
+            </div>
+          </div>
+
+          <button type="submit" className="add-property-button">
+            Add Property
+          </button>
         </div>
       </form>
     </div>

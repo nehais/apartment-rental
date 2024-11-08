@@ -1,5 +1,6 @@
 .navbar {
   height: 10%;
+  width: 100vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -21,13 +22,13 @@
 .sidebar {
   font-size: 1.3em;
   padding-top: 20px;
-  width: 10%;
+  width: 20%;
   display: flex;
   flex-direction: column;
 }
 
 .main-content {
-  width: 90%;
+  width: 80%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -73,7 +74,6 @@
   width: 400px;
   height: 350px;
   border-radius: 5px 5px 0 0;
-  margin-bottom: 10px;
 }
 
 .delete-button {
@@ -114,6 +114,7 @@
 
 .footer {
   height: 7%;
+  width: 100vw;
   background-color: #cccbcb;
   padding-top: 5px;
 }
@@ -161,6 +162,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-y: auto;
 
   img {
     width: 500px;
@@ -181,6 +183,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 30vw;
 
   h4,
   h5,
@@ -190,7 +193,7 @@
 }
 
 .details-apart-highlight {
-  width: 30vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -204,7 +207,7 @@
 }
 
 #details-apt-desc {
-  width: 30vw;
+  width: 100%;
   border-top: solid 1px #14404d;
 
   margin-top: 10px;
@@ -212,7 +215,7 @@
 }
 
 #details-host {
-  width: 30vw;
+  width: 100%;
   border-top: solid 1px #14404d;
 
   margin-top: 10px;
@@ -228,6 +231,144 @@
 }
 
 #details-host-abt {
-  width: 30vw;
+  width: 100%;
   font-size: 0.8em;
+}
+
+.AddListing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-list-area {
+  width: 35%;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.add-property-button {
+  color: white;
+  background-color: #14404d;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.form-fields {
+  width: 100%;
+}
+
+/*Tablet Screen*/
+@media screen and (max-device-width: 425px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .rental-card {
+    width: 350px;
+    margin: 20px 0 0 0;
+  }
+
+  .rent-picture {
+    width: 350px;
+  }
+
+  #card-name-title {
+    width: 350px;
+  }
+
+  #card-rating {
+    width: 16%;
+  }
+
+  .details-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rental-details {
+    align-items: center;
+    width: 100%;
+    img {
+      margin: 0;
+      width: 300px;
+    }
+  }
+
+  .details-apt-content {
+    width: 65vw;
+  }
+
+  .git-logo {
+    height: 35px;
+    width: 50px;
+  }
+
+  .add-list-area {
+    width: 100%;
+  }
+
+  .AddListing {
+    label {
+      font-size: 0.8em;
+    }
+  }
+}
+
+/*Tablet Screen*/
+@media screen and (max-device-width: 768px) and (min-width: 426px) {
+  .sidebar {
+    font-size: 1em;
+  }
+
+  .details-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rental-details {
+    align-items: center;
+    width: 100%;
+    img {
+      margin: 0;
+    }
+  }
+
+  .details-apt-content {
+    width: 65vw;
+  }
+
+  .git-logo {
+    height: 35px;
+    width: 50px;
+  }
+
+  .add-list-area {
+    width: 70%;
+  }
 }
