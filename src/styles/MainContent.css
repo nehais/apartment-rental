@@ -19,7 +19,7 @@
 }
 
 .sidebar {
-  font-size: 1.5em;
+  font-size: 1.3em;
   padding-top: 20px;
   width: 10%;
   display: flex;
@@ -54,6 +54,21 @@
   position: relative;
 }
 
+#card-name-title {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+#card-name {
+  width: 85%;
+}
+
+#card-rating {
+  width: 13%;
+  text-align: right;
+}
+
 .rent-picture {
   width: 400px;
   height: 350px;
@@ -74,6 +89,21 @@
 
   cursor: pointer;
 }
+
+.edit-button {
+  position: absolute;
+  right: 15px;
+  top: -10px;
+  background-image: url("../assets/edit.png");
+  background-size: 20px;
+
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
 .details {
   width: 400px;
   margin: 20px 20px 0 0;
@@ -81,9 +111,11 @@
   background-color: #a2b39c2a;
   border-radius: 0 0 5px 5px;
 }
+
 .footer {
   height: 7%;
   background-color: #cccbcb;
+  padding-top: 5px;
 }
 
 .app-logo {
@@ -96,6 +128,19 @@
   width: 80px;
 }
 
+.about-us {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-user {
+  display: flex;
+  width: 10vw;
+  justify-content: space-between;
+}
 .notfound {
   margin-top: 100px;
   display: flex;
@@ -110,4 +155,79 @@
   background-color: #14404d;
   padding: 10px 20px;
   border-radius: 5px;
+}
+
+.rental-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  img {
+    width: 500px;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+}
+
+#details-name {
+  align-self: center;
+}
+
+.details-img {
+  display: flex;
+}
+
+.details-apt-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h4,
+  h5,
+  p {
+    margin: 2px 0;
+  }
+}
+
+.details-apart-highlight {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#details-apart-title {
+  padding-right: 20px;
+}
+
+#details-rating {
+  align-self: center;
+}
+
+#details-apt-desc {
+  width: 30vw;
+  border-top: solid 1px #14404d;
+
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+#details-host {
+  width: 30vw;
+  border-top: solid 1px #14404d;
+
+  margin-top: 10px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
+
+#details-host-abt {
+  width: 30vw;
+  font-size: 0.8em;
 }

@@ -1,10 +1,12 @@
-import gitHubLogo from "../assets/GitHub-logo.png"
+import { Link } from "react-router-dom";
+import gitHubLogo from "../assets/GitHub-logo.png";
 
 const Footer = () => {
   return (
     <div className="footer">
-      
-      <a href="https://github.com/nehais/apartment-rental"><img src={gitHubLogo} alt="Git Hub Logo" className="git-logo"></img></a>
+      <Link to="https://github.com/nehais/apartment-rental">
+        <img src={gitHubLogo} alt="Git Hub Logo" className="git-logo"></img>
+      </Link>
     </div>
   );
 };
