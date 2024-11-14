@@ -1,34 +1,27 @@
-.navbar {
-  height: 10%;
-  width: 100vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 20px;
-  background-color: #cccbcb;
-  color: #14404d;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  font-weight: bold;
-  font-style: normal;
-}
-
-.content {
-  display: flex;
-  height: 83%;
-  background-color: white;
-}
-
-.sidebar {
-  font-size: 1.3em;
-  padding-top: 20px;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-}
-
 .main-content {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.search-bar {
+  background-image: url("../assets/search.jpg");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 1px;
+  width: 90%;
+  margin: 20px 0 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1.5px solid #14404d;
+  color: #14404d;
+  font-size: 1em;
+  text-indent: 20px;
+}
+
+.main-rental-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -55,10 +48,19 @@
   position: relative;
 }
 
+.rental-card:hover {
+  transform: scale(1.02);
+}
+
 #card-name-title {
   display: flex;
   justify-content: space-between;
   width: 400px;
+  padding-left: 2px;
+}
+
+#card-host {
+  padding-left: 2px;
 }
 
 #card-name {
@@ -68,6 +70,16 @@
 #card-rating {
   width: 13%;
   text-align: right;
+  padding-right: 2px;
+}
+
+.price {
+  padding: 0 2px;
+}
+
+.sold-out {
+  color: red;
+  padding: 0 2px;
 }
 
 .rent-picture {
@@ -104,6 +116,11 @@
   cursor: pointer;
 }
 
+.edit-button:hover,
+.delete-button:hover {
+  transform: scale(1.4);
+}
+
 .details {
   width: 400px;
   margin: 20px 20px 0 0;
@@ -112,22 +129,10 @@
   border-radius: 0 0 5px 5px;
 }
 
-.footer {
-  height: 7%;
-  width: 100vw;
-  background-color: #cccbcb;
-  padding-top: 5px;
-}
-
-.app-logo {
-  height: 50px;
-  width: 80px;
-}
-
-.git-logo {
+.abt-git-logo {
   margin: 0px 20px;
   height: 50px;
-  width: 80px;
+  width: 85px;
 }
 
 .in-logo {
@@ -149,9 +154,15 @@
 .about-user {
   display: flex;
   width: 50%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
+
+.about-user-name {
+  width: 100px;
+  letter-spacing: 1px;
+}
+
 .notfound {
   margin-top: 100px;
   display: flex;
@@ -185,7 +196,7 @@
   align-self: center;
 }
 
-.details-img {
+.details-content {
   display: flex;
 }
 
@@ -202,18 +213,11 @@
   }
 }
 
-.details-apart-highlight {
+.details-apart-info {
   width: 100%;
+
   display: flex;
   justify-content: space-between;
-}
-
-#details-apart-title {
-  padding-right: 20px;
-}
-
-#details-rating {
-  align-self: center;
 }
 
 #details-apt-desc {
@@ -281,22 +285,27 @@
   margin-top: 20px;
 }
 
+.add-property-button:hover {
+  transform: scale(1.2);
+}
+
 .form-fields {
   width: 100%;
 }
 
-/*Tablet Screen*/
+/*Mobile Screen*/
 @media screen and (max-device-width: 425px) {
-  .sidebar {
-    display: none;
+  .about-us {
+    width: 100%;
   }
 
-  .about-us {
+  .about-user {
     width: 100%;
   }
 
   .main-content {
     width: 100%;
+    align-items: center;
   }
 
   .rental-card {
@@ -316,6 +325,20 @@
     width: 16%;
   }
 
+  .rental-details {
+    align-items: center;
+    width: 80%;
+    img {
+      margin: 0;
+      width: 300px;
+    }
+  }
+
+  .details-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .details-img {
     display: flex;
     flex-direction: column;
@@ -323,22 +346,8 @@
     align-items: center;
   }
 
-  .rental-details {
-    align-items: center;
-    width: 100%;
-    img {
-      margin: 0;
-      width: 300px;
-    }
-  }
-
   .details-apt-content {
-    width: 65vw;
-  }
-
-  .git-logo {
-    height: 35px;
-    width: 50px;
+    width: 80vw;
   }
 
   .add-list-area {
@@ -354,8 +363,18 @@
 
 /*Tablet Screen*/
 @media screen and (max-device-width: 768px) and (min-width: 426px) {
-  .sidebar {
-    font-size: 1em;
+  .rental-details {
+    align-items: center;
+    width: 100%;
+    img {
+      margin: 0;
+    }
+  }
+
+  .details-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .details-img {
@@ -365,21 +384,8 @@
     align-items: center;
   }
 
-  .rental-details {
-    align-items: center;
-    width: 100%;
-    img {
-      margin: 0;
-    }
-  }
-
   .details-apt-content {
     width: 65vw;
-  }
-
-  .git-logo {
-    height: 35px;
-    width: 50px;
   }
 
   .add-list-area {

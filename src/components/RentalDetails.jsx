@@ -11,20 +11,25 @@ const RentalDetails = ({ apartList }) => {
   return (
     <div className="rental-details">
       <h3 id="details-name">{apartment.name}</h3>
-      <div className="details-img">
+      <div className="details-content">
         <img src={apartment.picture_url} alt="Apartment Image" />
         <div className="details-apt-content">
-          <div className="details-apart-highlight">
-            <h4 id="details-apart-title">
-              {apartment.property_type} in {apartment.neighbourhood}
-            </h4>
-            {apartment.price && <h4>{apartment.price} night</h4>}
-          </div>
+          <h4 id="details-apart-title">
+            {apartment.property_type} in {apartment.neighbourhood}
+          </h4>
+
           <p>
             {apartment.accommodates} guests - {apartment.bedrooms} bedrooms -{" "}
             {apartment.beds} beds - {apartment.bathrooms} baths
           </p>
-          <p id="details-rating">&#9733; {apartment.review_scores_rating}</p>
+          <div className="details-apart-info">
+            <p>&#9733; {apartment.review_scores_rating}</p>
+            {apartment.instant_bookable ? (
+              <h4>{apartment.price} night</h4>
+            ) : (
+              <h4 className="sold-out">Sold out</h4>
+            )}
+          </div>
 
           {apartment.description && (
             <p id="details-apt-desc">{apartment.description}</p>

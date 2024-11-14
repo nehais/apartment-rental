@@ -1,0 +1,19 @@
+.navbar {
+  height: 10%;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  background-color: #14404d77;
+  color: #14404d;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.app-logo {
+  height: 50px;
+  width: 80px;
+}

@@ -12,18 +12,26 @@ const AboutUs = () => {
         Built by:
       </p>
       <div className="about-user">
-        <h4>Neha Sinha</h4>
+        <h4 className="about-user-name">Neha Sinha</h4>
         <Link to="https://github.com/nehais/">
-          <img src={gitHubLogo} alt="Git Hub Logo" className="git-logo"></img>
+          <img
+            src={gitHubLogo}
+            alt="Git Hub Logo"
+            className="abt-git-logo"
+          ></img>
         </Link>
         <Link to="https://linkedin.com/in/neha-builds">
           <img src={linkedInLogo} alt="Git Hub Logo" className="in-logo"></img>
         </Link>
       </div>
       <div className="about-user">
-        <h4>Teresa</h4>
+        <h4 className="about-user-name">Teresa García</h4>
         <Link to="https://github.com/nehais/apartment-rental">
-          <img src={gitHubLogo} alt="Git Hub Logo" className="git-logo"></img>
+          <img
+            src={gitHubLogo}
+            alt="Git Hub Logo"
+            className="abt-git-logo"
+          ></img>
         </Link>
         <Link to="https://linkedin.com/in/neha-builds">
           <img src={linkedInLogo} alt="Git Hub Logo" className="in-logo"></img>

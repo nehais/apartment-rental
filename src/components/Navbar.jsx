@@ -1,4 +1,6 @@
-import Logo from "../assets/Logo.png"
+import "../styles/Navbar.css";
+
+import Logo from "../assets/Logo.png";
 const Navbar = () => {
   return (
     <div className="navbar">

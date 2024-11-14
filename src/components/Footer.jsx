@@ -1,3 +1,5 @@
+import "../styles/Footer.css";
+
 import { Link } from "react-router-dom";
 import gitHubLogo from "../assets/GitHub-logo.png";
 

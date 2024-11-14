@@ -1,21 +1,24 @@
 import "../styles/MainContent.css";
 
-import { useState } from "react";
 import RentalCard from "./RentalCard";
+import SearchBar from "./SearchBar";
 
 const MainContent = ({ apartList, setApartList }) => {
   return (
     <div className="main-content">
-      {apartList.map((apartment) => {
-        return (
-          <RentalCard
-            key={apartment.id}
-            apartment={apartment}
-            apartList={apartList}
-            setApartList={setApartList}
-          />
-        );
-      })}
+      <SearchBar />
+      <div className="main-rental-list">
+        {apartList.map((apartment) => {
+          return (
+            <RentalCard
+              key={apartment.id}
+              apartment={apartment}
+              apartList={apartList}
+              setApartList={setApartList}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
