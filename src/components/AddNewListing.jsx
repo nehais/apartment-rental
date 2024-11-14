@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-const AddNewListing = () => {
+const AddNewListing = ({ apartlist, setApartList }) => {
   const [picture_url, setPicture_url] = useState("");
   const [name, setName] = useState("");
   const [host_location, setHost_location] = useState("");
@@ -16,6 +16,13 @@ const AddNewListing = () => {
   const [review_scores_rating, setReview_scores_rating] = useState("");
   const [host_thumbnail_url, setHost_thumbnail_url] = useState("");
   const [host_about, setHost_about] = useState("");
+  const [formData, setFormData] = useState({ picture_url: "", name: "" });
+
+  /*const handleChange (e =>{
+    setFormData(prev =>
+       {...prev, e.target.name: e.target.value}
+    )
+  })*/
   const handlePicture_url = (e) => setPicture_url(e.target.value);
   const handleName = (e) => setName(e.target.value);
   const handleHost_location = (e) => setHost_location(e.target.value);
@@ -32,9 +39,29 @@ const AddNewListing = () => {
     setReview_scores_rating(e.target.value);
   const handleHost_thumbnail_url = (e) => setHost_thumbnail_url(e.target.value);
   const handleHost_about = (e) => setHost_about(e.target.value);
+  function handleSubmit() {
+    const newApartment = {
+      picture_url: picture_url,
+      name: name,
+      host_location: host_location,
+      host_name: host_name,
+      description: description,
+      property_type: property_type,
+      accommodates: accommodates,
+      bathrooms: bathrooms,
+      bedrooms: bedrooms,
+      beds: beds,
+      neighbourhood: neighbourhood,
+      price: price,
+      review_scores_rating: review_scores_rating,
+      host_thumbnail_url: host_thumbnail_url,
+      host_about: host_about,
+    };
+    setApartList([...apartlist, newApartment]);
+  }
   return (
     <div className="add-list-area">
-      <form className="AddListing">
+      <form className="AddListing" onSubmit={handleSubmit}>
         <h2>Add a New Listing</h2>
         <div className="form-fields">
           <div className="row">

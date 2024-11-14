@@ -37,7 +37,15 @@ function App() {
             path="/rentalDetails/:apartmentId"
             element={<RentalDetails apartList={apartList} />}
           />
-          <Route path="/addNewListing" element={<AddNewListing />} />
+          <Route
+            path="/addNewListing"
+            element={
+              <AddNewListing
+                apartList={apartList}
+                setApartList={setApartList}
+              />
+            }
+          />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
