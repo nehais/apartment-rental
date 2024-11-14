@@ -1,25 +1,37 @@
 import React from "react";
 import { useState } from "react";
-
 const AddNewListing = () => {
-  const [picture_Url, setPicture_Url] = useState("");
+  const [picture_url, setPicture_url] = useState("");
   const [name, setName] = useState("");
-  const [host_Location, setHost_Location] = useState("");
-  const [host_Name, setHost_Name] = useState("");
+  const [host_location, setHost_location] = useState("");
+  const [host_name, setHost_name] = useState("");
   const [description, setDescription] = useState("");
-  const [property_Type, setProperty_Type] = useState("");
+  const [property_type, setProperty_type] = useState("");
   const [accommodates, setAccomodates] = useState("");
   const [bathrooms, setBathrooms] = useState("");
   const [bedrooms, setBedrooms] = useState("");
-  const handlePicture_Url = (e) => setPicture_Url(e.target.value);
+  const [beds, setBeds] = useState("");
+  const [neighbourhood, setNeighbourhood] = useState("");
+  const [price, setPrice] = useState("");
+  const [review_scores_rating, setReview_scores_rating] = useState("");
+  const [host_thumbnail_url, setHost_thumbnail_url] = useState("");
+  const [host_about, setHost_about] = useState("");
+  const handlePicture_url = (e) => setPicture_url(e.target.value);
   const handleName = (e) => setName(e.target.value);
-  const handleHost_Location = (e) => setHost_Location(e.target.value);
-  const handleHost_Name = (e) => setHost_Name(e.target.value);
+  const handleHost_location = (e) => setHost_location(e.target.value);
+  const handleHost_name = (e) => setHost_name(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
-  const handleProperty_Type = (e) => setProperty_type(e.target.value);
+  const handleProperty_type = (e) => setProperty_type(e.target.value);
   const handleAccommodates = (e) => setAccomodates(e.target.value);
   const handleBathrooms = (e) => setBathrooms(e.target.value);
   const handleBedrooms = (e) => setBedrooms(e.target.value);
+  const handleBeds = (e) => setBeds(e.target.value);
+  const handleNeighbourhood = (e) => setNeighbourhood(e.target.value);
+  const handlePrice = (e) => setPrice(e.target.value);
+  const handleReview_scores_rating = (e) =>
+    setReview_scores_rating(e.target.value);
+  const handleHost_thumbnail_url = (e) => setHost_thumbnail_url(e.target.value);
+  const handleHost_about = (e) => setHost_about(e.target.value);
   return (
     <div className="add-list-area">
       <form className="AddListing">
@@ -40,40 +52,37 @@ const AddNewListing = () => {
               />
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
-              <label for="property_Type">Apartment Type</label>
+              <label for="property_type">Apartment Type</label>
             </div>
             <div className="col-75">
               <select
-                id="property_Type"
-                name="property_Type"
-                value={property_Type}
-                onChange={handleProperty_Type}
+                id="property_type"
+                name="property_type"
+                value={property_type}
+                onChange={handleProperty_type}
               >
                 <option value="Private Room">Private Room</option>
                 <option value="Whole Apartment">Whole Apartment</option>
               </select>
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
-              <label for="picture_Url">Apartment Image</label>
+              <label for="picture_url">Apartment Image</label>
             </div>
             <div className="col-75">
               <input
                 type="text"
-                id="picture_Url"
-                name="picture_Url"
+                id="picture_url"
+                name="picture_url"
                 placeholder="Apartment Image URL"
-                value={picture_Url}
-                onChange={handlePicture_Url}
+                value={picture_url}
+                onChange={handlePicture_url}
               />
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
               <label for="description">Apartment Description</label>
@@ -89,7 +98,21 @@ const AddNewListing = () => {
               />
             </div>
           </div>
-
+          <div className="row">
+            <div className="col-25">
+              <label for="neighbourhood">Neighbourhood</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="neighbourhood"
+                name="neighbourhood"
+                placeholder="Neighbourhood"
+                value={neighbourhood}
+                onChange={handleNeighbourhood}
+              />
+            </div>
+          </div>
           <div className="row">
             <div className="col-25">
               <label for="accommodates">Accomodates</label>
@@ -105,7 +128,6 @@ const AddNewListing = () => {
               />
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
               <label for="bathrooms">Bathrooms</label>
@@ -121,7 +143,6 @@ const AddNewListing = () => {
               />
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
               <label for="bedrooms">Bedrooms</label>
@@ -137,39 +158,111 @@ const AddNewListing = () => {
               />
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
-              <label for="host_Location">Host Location</label>
+              <label for="beds">Beds</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="number"
+                id="beds"
+                name="beds"
+                placeholder="No. of Beds"
+                value={beds}
+                onChange={handleBeds}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="price">Price per night</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="number"
+                id="price"
+                name="price"
+                placeholder="Price per night"
+                value={price}
+                onChange={handlePrice}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="host_location">Host Location</label>
             </div>
             <div className="col-75">
               <input
                 type="text"
-                id="host_Location"
-                name="host_Location"
+                id="host_location"
+                name="host_location"
                 placeholder="Host Location"
-                value={host_Location}
-                onChange={handleHost_Location}
+                value={host_location}
+                onChange={handleHost_location}
               />
             </div>
           </div>
-
           <div className="row">
             <div className="col-25">
-              <label for="host_Name">Host Name</label>
+              <label for="host_name">Host Name</label>
             </div>
             <div className="col-75">
               <input
                 type="text"
-                id="host_Name"
-                name="host_Name"
+                id="host_name"
+                name="host_name"
                 placeholder="Host Name"
-                value={host_Name}
-                onChange={handleHost_Name}
+                value={host_name}
+                onChange={handleHost_name}
               />
             </div>
           </div>
-
+          <div className="row">
+            <div className="col-25">
+              <label for="host_about">Host About</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="host_about"
+                name="host_about"
+                placeholder="Tell us about yourself"
+                value={host_about}
+                onChange={handleHost_about}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="host_thumbnail_url">Host Thumbnail Url</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="host_thumbnail_url"
+                name="host_thumbnail_url"
+                placeholder="Host Thumbnail Url"
+                value={host_thumbnail_url}
+                onChange={handleHost_thumbnail_url}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="review_scores_rating">Review Scores Rating</label>
+            </div>
+            <div className="col-75">
+              <input
+                type="text"
+                id="review_scores_rating"
+                name="review_scores_rating"
+                placeholder="Review Scores Rating"
+                value={review_scores_rating}
+                onChange={handleReview_scores_rating}
+              />
+            </div>
+          </div>
           <button type="submit" className="add-property-button">
             Add Property
           </button>
@@ -178,5 +271,4 @@ const AddNewListing = () => {
     </div>
   );
 };
-
 export default AddNewListing;
