@@ -1,6 +1,14 @@
 import React from "react";
 import { useState } from "react";
-const AddNewListing = ({ apartList, setApartList }) => {
+const UpdateListing = ({ apartList, setApartList }) => {
+  /*@Teresa : 
+  1. getParams to get the passed id & filter on apartList to get the apartment
+  2. set the apartment data in the form 
+    a. change value field to apartment date
+    b. change onChange event to handleChange
+  */
+
+  /*@Teresa : After above implement - delete the extra state & event*/
   const [picture_url, setPicture_url] = useState("");
   const [name, setName] = useState("");
   const [host_location, setHost_location] = useState("");
@@ -16,9 +24,6 @@ const AddNewListing = ({ apartList, setApartList }) => {
   const [review_scores_rating, setReview_scores_rating] = useState("");
   const [host_thumbnail_url, setHost_thumbnail_url] = useState("");
   const [host_about, setHost_about] = useState("");
-
-  /*@Teresa : Add all the fields here & change the form too with formData.xyzFieldname & onChange event to handleChange. I have added the correct event below*/
-  const [formData, setFormData] = useState({ picture_url: "", name: "" });
 
   function handleChange(e) {
     setFormData((prev) => {
@@ -42,6 +47,8 @@ const AddNewListing = ({ apartList, setApartList }) => {
     setReview_scores_rating(e.target.value);
   const handleHost_thumbnail_url = (e) => setHost_thumbnail_url(e.target.value);
   const handleHost_about = (e) => setHost_about(e.target.value);
+
+  /*@Teresa : You should update the logic below for update*/
   function handleSubmit(e) {
     e.preventDefault();
     const newApartment = {
@@ -60,16 +67,13 @@ const AddNewListing = ({ apartList, setApartList }) => {
       review_scores_rating: review_scores_rating,
       host_thumbnail_url: host_thumbnail_url,
       host_about: host_about,
-      id: apartList.length + 2,
     };
     setApartList([...apartList, newApartment]);
-
-    /*@Teresa : Set the form data to black*/
   }
   return (
     <div className="add-list-area">
       <form className="AddListing" onSubmit={handleSubmit}>
-        <h2>Add a New Listing</h2>
+        <h2>Update the Listing</h2>
         <div className="form-fields">
           <div className="row">
             <div className="col-25">
@@ -305,4 +309,4 @@ const AddNewListing = ({ apartList, setApartList }) => {
     </div>
   );
 };
-export default AddNewListing;
+export default UpdateListing;

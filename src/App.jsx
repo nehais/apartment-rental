@@ -8,6 +8,7 @@ import { useState } from "react";
 import PageNotFound from "./components/PageNotFound";
 import RentalDetails from "./components/RentalDetails";
 import AddNewListing from "./components//AddNewListing";
+import UpdateListing from "./components//UpdateListing";
 import AboutUs from "./components/AboutUs";
 
 import Navbar from "./components/Navbar";
@@ -41,6 +42,15 @@ function App() {
             path="/addNewListing"
             element={
               <AddNewListing
+                apartList={apartList}
+                setApartList={setApartList}
+              />
+            }
+          />
+          <Route
+            path="/updateListing/:apartmentId"
+            element={
+              <UpdateListing
                 apartList={apartList}
                 setApartList={setApartList}
               />

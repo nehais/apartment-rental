@@ -28,11 +28,13 @@ function RentalCard({ apartment, apartList, setApartList }) {
         )}
       </Link>
 
-      <EditButton
-        id={apartment.id}
-        apartList={apartList}
-        setApartList={setApartList}
-      />
+      <Link to={`/updateListing/${apartment.id}`}>
+        <EditButton
+          id={apartment.id}
+          apartList={apartList}
+          setApartList={setApartList}
+        />
+      </Link>
 
       <DeleteButton
         id={apartment.id}
