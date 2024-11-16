@@ -43,7 +43,7 @@ _(https://nest-and-rest.netlify.app/)_
   - Image: A huge image of the apartment for clear view.
   - Apartment Info: Below image the apartment's title, location, rating and price are displayed. If the apartment is sold out then 'Sold out' text is displayed instead of price.
   - Edit Icon: Displayed on top right corner of the Card. On clicking this button the respective apartment is loaded in Edit mode for update.</br>
-    <img src="src/assets/readMeImgs/update-rental.jpg" alt="Add Rental" width="400"/></br>
+    <img src="src/assets/readMeImgs/update-rental.jpg" alt="Update Rental" width="400"/></br>
   - Delete Icon: Displayed on top right corner of the Card. On clicking this button the respective apartment is deleted from the list.
   - Apartment Details: Clicking on the Card loads the Main-content section with the Apartment Details. </br>
     <img src="src/assets/readMeImgs/rental-details.jpg" alt="Rental Details" width="500"/></br>
