@@ -43,7 +43,7 @@ _(https://nest-and-rest.netlify.app/)_
   - Image: A huge image of the apartment for clear view.
   - Apartment Info: Below image the apartment's title, location, rating and price are displayed. If the apartment is sold out then 'Sold out' text is displayed instead of price.
   - Edit Icon: Displayed on top right corner of the Card. On clicking this button the respective apartment is loaded in Edit mode for update.</br>
-    <img src="src/assets/readMeImgs/update-rental.jpg" alt="Update Rental" width="400"/></br>
+    <img src="src/assets/readMeImgs/update-rental.JPG" alt="Update Rental" width="400"/></br>
   - Delete Icon: Displayed on top right corner of the Card. On clicking this button the respective apartment is deleted from the list.
   - Apartment Details: Clicking on the Card loads the Main-content section with the Apartment Details. </br>
     <img src="src/assets/readMeImgs/rental-details.jpg" alt="Rental Details" width="500"/></br>
@@ -51,7 +51,7 @@ _(https://nest-and-rest.netlify.app/)_
     - Image: A huge image of the apartment for clear view.
     - Apartment Info: Parallel to the image, the apartment's title, location, guest count, accomation details, description, rating, host picture-name-info and price are displayed. If the apartment is sold out then 'Sold out' text is displayed instead of price.
 - Add your Nest: This menu is available in both Toolbar and Sidebar. On clicking this menu any time, the Main-content area is loaded with a Form for new apartment entry.</br>
-  <img src="src/assets/readMeImgs/add-rental.jpg" alt="Add Rental" width="400"/></br>
+  <img src="src/assets/readMeImgs/add-rental.JPG" alt="Add Rental" width="400"/></br>
 - About Menu: This menu is available in both Toolbar and Sidebar. This page provides details about the website and the designers.</br>
 
 ## Mobile Version
