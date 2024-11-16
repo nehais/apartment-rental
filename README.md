@@ -57,4 +57,4 @@ _(https://nest-and-rest.netlify.app/)_
 ## Mobile Version
 
 - Fully responsive with Toobar with easy menu access.</br>
-  <img src="images/readMeImgs/mobile-version.jpg" alt="Mobile Version" width="200"/></br>
+  <img src="src/assets/readMeImgs/mobile-version.jpg" alt="Mobile Version" width="200"/></br>
