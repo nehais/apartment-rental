@@ -43,7 +43,7 @@ const RentalDetails = ({ apartList }) => {
           </p>
           <div className="details-apart-info">
             <p>&#9733; {apartment.review_scores_rating}</p>
-            {apartment.instant_bookable ? (
+            {apartment.price ? (
               <h4>{apartment.price} night</h4>
             ) : (
               <h4 className="sold-out">Sold out</h4>

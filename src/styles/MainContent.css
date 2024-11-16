@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
 }
+
 .search-bar {
   background-image: url("../assets/search.jpg");
   background-repeat: no-repeat;
@@ -32,7 +33,7 @@
   flex-wrap: wrap;
   height: 90%;
   width: 100%;
-
+  margin-top: 5px;
   overflow-y: scroll;
 }
 

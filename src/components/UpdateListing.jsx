@@ -23,9 +23,14 @@ const UpdateListing = ({ apartList, setApartList }) => {
   console.log(apartList, apartmentId);
 
   useEffect(() => {
-    const appt = apartList.find((oneApartment) => {
+    let appt = apartList.find((oneApartment) => {
       return oneApartment.id === Number(apartmentId);
     });
+    appt.price = isNaN(appt.price)
+      ? appt.price
+        ? Number(appt.price.slice(1))
+        : ""
+      : appt.price;
     setApartmentToUpdate(appt);
   }, []);
 
@@ -44,7 +49,6 @@ const UpdateListing = ({ apartList, setApartList }) => {
         oneApartment = apartmentToUpdate;
 
         oneApartment.price = "$" + oneApartment.price;
-        oneApartment.instant_bookable = true;
       }
 
       return oneApartment;
@@ -211,7 +215,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
             </div>
             <div className="col-field">
               <input
-                type="text"
+                type="number"
                 id="price"
                 name="price"
                 placeholder="Price per night"

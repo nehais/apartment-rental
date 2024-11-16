@@ -26,7 +26,7 @@ function RentalCard({ apartment, apartList, setApartList }) {
             : apartment.host_location}
         </p>
 
-        {apartment.instant_bookable ? (
+        {apartment.price ? (
           <h4 className="price">{apartment.price} night</h4>
         ) : (
           <h4 className="sold-out">Sold out</h4>

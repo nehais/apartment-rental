@@ -33,7 +33,6 @@ const AddNewListing = ({ apartList, setApartList }) => {
 
     formData.price = "$" + formData.price;
     formData.id = apartList.length + 2;
-    formData.instant_bookable = true;
 
     setApartList([...apartList, formData]);
     navigate("/");
