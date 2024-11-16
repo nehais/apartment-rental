@@ -164,7 +164,7 @@
 }
 
 .notfound {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   width: 100vw;
   flex-direction: column;
@@ -249,7 +249,8 @@
   font-size: 0.8em;
 }
 
-.AddListing {
+.AddListing,
+.UpdateListing {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -259,16 +260,18 @@
   width: 35%;
 }
 
-.col-25 {
+.row {
+  height: 35px;
+}
+.col-label {
   float: left;
-  width: 25%;
-  margin-top: 6px;
+  width: 35%;
+  text-align: right;
 }
 
-.col-75 {
+.col-field {
   float: left;
-  width: 75%;
-  margin-top: 6px;
+  width: 65%;
 }
 
 .row::after {
@@ -291,6 +294,10 @@
 
 .form-fields {
   width: 100%;
+}
+
+.field {
+  width: 90%;
 }
 
 /*Mobile Screen*/
@@ -327,7 +334,7 @@
 
   .rental-details {
     align-items: center;
-    width: 80%;
+    width: 100%;
     img {
       margin: 0;
       width: 300px;
@@ -348,16 +355,28 @@
 
   .details-apt-content {
     width: 80vw;
+    align-items: center;
   }
 
   .add-list-area {
     width: 100%;
   }
 
-  .AddListing {
+  .AddListing,
+  .UpdateListing {
     label {
       font-size: 0.8em;
     }
+  }
+
+  .row {
+    height: 25px;
+  }
+  .col-label {
+    width: 40%;
+  }
+  .col-field {
+    width: 60%;
   }
 }
 
@@ -389,6 +408,23 @@
   }
 
   .add-list-area {
+    width: 75%;
+  }
+
+  .row {
+    height: 30px;
+  }
+  .col-label {
+    width: 30%;
+  }
+  .col-field {
     width: 70%;
+  }
+}
+
+/*Small Laptop Screen*/
+@media screen and (max-device-width: 1024px) and (min-width: 769px) {
+  .add-list-area {
+    width: 50%;
   }
 }

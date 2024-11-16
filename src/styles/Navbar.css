@@ -17,3 +17,14 @@
   height: 50px;
   width: 80px;
 }
+
+/*Mobile Screen*/
+@media screen and (max-device-width: 425px) {
+  .app-logo {
+    height: 45px;
+    width: 75px;
+  }
+  .navbar {
+    font-size: 1em;
+  }
+}

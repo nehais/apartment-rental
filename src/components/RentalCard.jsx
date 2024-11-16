@@ -19,7 +19,12 @@ function RentalCard({ apartment, apartList, setApartList }) {
           <p id="card-rating">&#9733; {apartment.review_scores_rating}</p>
         </div>
 
-        <p id="card-host">Hosted at {apartment.host_location}</p>
+        <p id="card-host">
+          Hosted at{" "}
+          {apartment.neighbourhood
+            ? apartment.neighbourhood
+            : apartment.host_location}
+        </p>
 
         {apartment.instant_bookable ? (
           <h4 className="price">{apartment.price} night</h4>
