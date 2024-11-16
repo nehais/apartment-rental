@@ -7,7 +7,6 @@
 }
 
 .search-area {
-  height: 10%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -18,7 +17,6 @@
   background-size: 25px;
   background-position: 1px;
   width: 90%;
-  margin: 20px 0 10px 0;
   padding: 10px;
   border-radius: 10px;
   border: 1.5px solid #14404d;
