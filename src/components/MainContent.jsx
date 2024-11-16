@@ -22,7 +22,10 @@ const MainContent = ({ apartList, setApartList }) => {
 
   return (
     <div className="main-content">
-      <SearchBar searchStr={searchStr} setSearchStr={setSearchStr} />
+      <div className="search-area">
+        <SearchBar searchStr={searchStr} setSearchStr={setSearchStr} />
+      </div>
+
       <div className="main-rental-list">
         {filteredApts.map((apartment) => {
           return (
