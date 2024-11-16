@@ -1,24 +1,24 @@
 import React from "react";
 import { useState } from "react";
 const AddNewListing = ({ apartList, setApartList }) => {
-  const [picture_url, setPicture_url] = useState("");
-  const [name, setName] = useState("");
-  const [host_location, setHost_location] = useState("");
-  const [host_name, setHost_name] = useState("");
-  const [description, setDescription] = useState("");
-  const [property_type, setProperty_type] = useState("");
-  const [accommodates, setAccomodates] = useState("");
-  const [bathrooms, setBathrooms] = useState("");
-  const [bedrooms, setBedrooms] = useState("");
-  const [beds, setBeds] = useState("");
-  const [neighbourhood, setNeighbourhood] = useState("");
-  const [price, setPrice] = useState("");
-  const [review_scores_rating, setReview_scores_rating] = useState("");
-  const [host_thumbnail_url, setHost_thumbnail_url] = useState("");
-  const [host_about, setHost_about] = useState("");
-
   /*@Teresa : Add all the fields here & change the form too with formData.xyzFieldname & onChange event to handleChange. I have added the correct event below*/
-  const [formData, setFormData] = useState({ picture_url: "", name: "" });
+  const [formData, setFormData] = useState({
+    picture_url: "",
+    name: "",
+    host_location: "",
+    host_name: "",
+    description: "",
+    property_type: "",
+    accommodates: "",
+    bathrooms: "",
+    bedrooms: "",
+    beds: "",
+    neighbourhood: "",
+    price: "",
+    review_scores_rating: "",
+    host_thumbnail_url: "",
+    host_about: "",
+  });
 
   function handleChange(e) {
     setFormData((prev) => {
@@ -81,7 +81,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="name"
                 name="name"
                 placeholder="Apartment Title"
-                value={name}
+                value={formData.name}
                 onChange={handleName}
               />
             </div>
@@ -94,7 +94,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
               <select
                 id="property_type"
                 name="property_type"
-                value={property_type}
+                value={formData.property_type}
                 onChange={handleProperty_type}
               >
                 <option value="Private Room">Private Room</option>
@@ -112,7 +112,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="picture_url"
                 name="picture_url"
                 placeholder="Apartment Image URL"
-                value={picture_url}
+                value={formData.picture_url}
                 onChange={handlePicture_url}
               />
             </div>
@@ -127,7 +127,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="description"
                 name="description"
                 placeholder="Apartment Description"
-                value={description}
+                value={formData.description}
                 onChange={handleDescription}
               />
             </div>
@@ -142,7 +142,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="neighbourhood"
                 name="neighbourhood"
                 placeholder="Neighbourhood"
-                value={neighbourhood}
+                value={formData.neighbourhood}
                 onChange={handleNeighbourhood}
               />
             </div>
@@ -157,7 +157,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="accommodates"
                 name="accommodates"
                 placeholder="Apartment Accommodation No."
-                value={accommodates}
+                value={formData.accommodates}
                 onChange={handleAccommodates}
               />
             </div>
@@ -172,7 +172,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="bathrooms"
                 name="bathrooms"
                 placeholder="No. of Bathrooms"
-                value={bathrooms}
+                value={formData.bathrooms}
                 onChange={handleBathrooms}
               />
             </div>
@@ -187,7 +187,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="bedrooms"
                 name="bedrooms"
                 placeholder="No. of Bedrooms"
-                value={bedrooms}
+                value={formData.bedrooms}
                 onChange={handleBedrooms}
               />
             </div>
@@ -202,7 +202,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="beds"
                 name="beds"
                 placeholder="No. of Beds"
-                value={beds}
+                value={formData.beds}
                 onChange={handleBeds}
               />
             </div>
@@ -217,7 +217,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="price"
                 name="price"
                 placeholder="Price per night"
-                value={price}
+                value={formData.price}
                 onChange={handlePrice}
               />
             </div>
@@ -232,7 +232,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="host_location"
                 name="host_location"
                 placeholder="Host Location"
-                value={host_location}
+                value={formData.host_location}
                 onChange={handleHost_location}
               />
             </div>
@@ -247,7 +247,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="host_name"
                 name="host_name"
                 placeholder="Host Name"
-                value={host_name}
+                value={formData.host_name}
                 onChange={handleHost_name}
               />
             </div>
@@ -262,7 +262,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="host_about"
                 name="host_about"
                 placeholder="Tell us about yourself"
-                value={host_about}
+                value={formData.host_about}
                 onChange={handleHost_about}
               />
             </div>
@@ -277,7 +277,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="host_thumbnail_url"
                 name="host_thumbnail_url"
                 placeholder="Host Thumbnail Url"
-                value={host_thumbnail_url}
+                value={formData.host_thumbnail_url}
                 onChange={handleHost_thumbnail_url}
               />
             </div>
@@ -292,7 +292,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 id="review_scores_rating"
                 name="review_scores_rating"
                 placeholder="Review Scores Rating"
-                value={review_scores_rating}
+                value={formData.review_scores_rating}
                 onChange={handleReview_scores_rating}
               />
             </div>

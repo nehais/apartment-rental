@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 import MainContent from "./components/MainContent";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [apartList, setApartList] = useState(ApartmentListings);
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
+      <SearchBar />
       <div className="content">
         <Sidebar />
 

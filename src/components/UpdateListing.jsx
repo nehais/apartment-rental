@@ -1,6 +1,12 @@
 import React from "react";
 import { useState } from "react";
-const UpdateListing = ({ apartList, setApartList }) => {
+import { Link, useParams } from "react-router-dom";
+const UpdateListing = ({ apartment, apartList, setApartList }) => {
+  const params = useParams();
+  console.log(apartList, params);
+  const apartmentToUpdate = apartment.find(
+    (apartment) => apartment.id === params.apartment.id
+  );
   /*@Teresa : 
   1. getParams to get the passed id & filter on apartList to get the apartment
   2. set the apartment data in the form 
@@ -9,21 +15,33 @@ const UpdateListing = ({ apartList, setApartList }) => {
   */
 
   /*@Teresa : After above implement - delete the extra state & event*/
-  const [picture_url, setPicture_url] = useState("");
-  const [name, setName] = useState("");
-  const [host_location, setHost_location] = useState("");
-  const [host_name, setHost_name] = useState("");
-  const [description, setDescription] = useState("");
-  const [property_type, setProperty_type] = useState("");
-  const [accommodates, setAccomodates] = useState("");
-  const [bathrooms, setBathrooms] = useState("");
-  const [bedrooms, setBedrooms] = useState("");
-  const [beds, setBeds] = useState("");
-  const [neighbourhood, setNeighbourhood] = useState("");
-  const [price, setPrice] = useState("");
-  const [review_scores_rating, setReview_scores_rating] = useState("");
-  const [host_thumbnail_url, setHost_thumbnail_url] = useState("");
-  const [host_about, setHost_about] = useState("");
+  const [picture_url, setPicture_url] = useState(apartmentToUpdate.picture_url);
+  const [name, setName] = useState(apartmentToUpdate.name);
+  const [host_location, setHost_location] = useState(
+    apartmentToUpdate.host_location
+  );
+  const [host_name, setHost_name] = useState(apartmentToUpdate.host_name);
+  const [description, setDescription] = useState(apartmentToUpdate.description);
+  const [property_type, setProperty_type] = useState(
+    apartmentToUpdate.property_type
+  );
+  const [accommodates, setAccomodates] = useState(
+    apartmentToUpdate.accommodates
+  );
+  const [bathrooms, setBathrooms] = useState(apartmentToUpdate.bathrooms);
+  const [bedrooms, setBedrooms] = useState(apartmentToUpdate.bedrooms);
+  const [beds, setBeds] = useState(apartmentToUpdate.beds);
+  const [neighbourhood, setNeighbourhood] = useState(
+    apartmentToUpdate.neighbourhood
+  );
+  const [price, setPrice] = useState(apartmentToUpdate.price);
+  const [review_scores_rating, setReview_scores_rating] = useState(
+    apartmentToUpdate.review_scores_rating
+  );
+  const [host_thumbnail_url, setHost_thumbnail_url] = useState(
+    apartmentToUpdate.host_thumbnail_url
+  );
+  const [host_about, setHost_about] = useState(apartmentToUpdate.host_about);
 
   function handleChange(e) {
     setFormData((prev) => {
@@ -31,26 +49,31 @@ const UpdateListing = ({ apartList, setApartList }) => {
     });
   }
 
-  const handlePicture_url = (e) => setPicture_url(e.target.value);
-  const handleName = (e) => setName(e.target.value);
-  const handleHost_location = (e) => setHost_location(e.target.value);
-  const handleHost_name = (e) => setHost_name(e.target.value);
-  const handleDescription = (e) => setDescription(e.target.value);
-  const handleProperty_type = (e) => setProperty_type(e.target.value);
-  const handleAccommodates = (e) => setAccomodates(e.target.value);
-  const handleBathrooms = (e) => setBathrooms(e.target.value);
-  const handleBedrooms = (e) => setBedrooms(e.target.value);
-  const handleBeds = (e) => setBeds(e.target.value);
-  const handleNeighbourhood = (e) => setNeighbourhood(e.target.value);
-  const handlePrice = (e) => setPrice(e.target.value);
-  const handleReview_scores_rating = (e) =>
-    setReview_scores_rating(e.target.value);
-  const handleHost_thumbnail_url = (e) => setHost_thumbnail_url(e.target.value);
-  const handleHost_about = (e) => setHost_about(e.target.value);
-
   /*@Teresa : You should update the logic below for update*/
-  function handleSubmit(e) {
+  function handleUpdate(e) {
     e.preventDefault();
+    const updatedApartments = apartList.map((oneApartment) => {
+      if (oneApartment.id == params.apartment.id)
+        oneApartment.picture_url = picture_url;
+      oneApartment.name = name;
+      oneApartment.host_location = host_location;
+      oneApartment.host_name = host_name;
+      oneApartment.description = description;
+      oneApartment.property_type = property_type;
+      oneApartment.accommodates = accommodates;
+      oneApartment.bathrooms = bathrooms;
+      oneApartment.bedrooms = bedrooms;
+      oneApartment.beds = beds;
+      oneApartment.neighbourhood = neighbourhood;
+      oneApartment.price = price;
+      oneApartment.review_scores_rating = review_scores_rating;
+      oneApartment.host_thumbnail_url = host_thumbnail_url;
+      oneApartment.host_about = host_about;
+
+      return oneApartment;
+    });
+    setApartList(updatedApartments);
+
     const newApartment = {
       picture_url: picture_url,
       name: name,
@@ -72,7 +95,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
   }
   return (
     <div className="add-list-area">
-      <form className="AddListing" onSubmit={handleSubmit}>
+      <form className="UpdateListing" onSubmit={handleUpdate}>
         <h2>Update the Listing</h2>
         <div className="form-fields">
           <div className="row">
@@ -86,7 +109,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="name"
                 placeholder="Apartment Title"
                 value={name}
-                onChange={handleName}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
           </div>
@@ -99,7 +122,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 id="property_type"
                 name="property_type"
                 value={property_type}
-                onChange={handleProperty_type}
+                onChange={(e) => setProperty_type(e.target.value)}
               >
                 <option value="Private Room">Private Room</option>
                 <option value="Whole Apartment">Whole Apartment</option>
@@ -117,7 +140,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="picture_url"
                 placeholder="Apartment Image URL"
                 value={picture_url}
-                onChange={handlePicture_url}
+                onChange={(e) => setPicture_url(e.target.value)}
               />
             </div>
           </div>
@@ -132,7 +155,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="description"
                 placeholder="Apartment Description"
                 value={description}
-                onChange={handleDescription}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
           </div>
@@ -147,7 +170,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="neighbourhood"
                 placeholder="Neighbourhood"
                 value={neighbourhood}
-                onChange={handleNeighbourhood}
+                onChange={(e) => setNeighbourhood(e.target.value)}
               />
             </div>
           </div>
@@ -162,7 +185,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="accommodates"
                 placeholder="Apartment Accommodation No."
                 value={accommodates}
-                onChange={handleAccommodates}
+                onChange={(e) => setAccomodates(e.target.value)}
               />
             </div>
           </div>
@@ -177,7 +200,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="bathrooms"
                 placeholder="No. of Bathrooms"
                 value={bathrooms}
-                onChange={handleBathrooms}
+                onChange={(e) => setBathrooms(e.target.value)}
               />
             </div>
           </div>
@@ -192,7 +215,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="bedrooms"
                 placeholder="No. of Bedrooms"
                 value={bedrooms}
-                onChange={handleBedrooms}
+                onChange={(e) => setBedrooms(e.target.value)}
               />
             </div>
           </div>
@@ -207,7 +230,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="beds"
                 placeholder="No. of Beds"
                 value={beds}
-                onChange={handleBeds}
+                onChange={(e) => setBeds(e.target.value)}
               />
             </div>
           </div>
@@ -222,7 +245,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="price"
                 placeholder="Price per night"
                 value={price}
-                onChange={handlePrice}
+                onChange={(e) => setPrice(e.target.value)}
               />
             </div>
           </div>
@@ -237,7 +260,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="host_location"
                 placeholder="Host Location"
                 value={host_location}
-                onChange={handleHost_location}
+                onChange={(e) => setHost_location(e.target.value)}
               />
             </div>
           </div>
@@ -252,7 +275,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="host_name"
                 placeholder="Host Name"
                 value={host_name}
-                onChange={handleHost_name}
+                onChange={(e) => setHost_name(e.target.value)}
               />
             </div>
           </div>
@@ -267,7 +290,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="host_about"
                 placeholder="Tell us about yourself"
                 value={host_about}
-                onChange={handleHost_about}
+                onChange={(e) => setHost_about(e.target.value)}
               />
             </div>
           </div>
@@ -282,7 +305,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="host_thumbnail_url"
                 placeholder="Host Thumbnail Url"
                 value={host_thumbnail_url}
-                onChange={handleHost_thumbnail_url}
+                onChange={(e) => setHost_thumbnail_url(e.target.value)}
               />
             </div>
           </div>
@@ -297,13 +320,15 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="review_scores_rating"
                 placeholder="Review Scores Rating"
                 value={review_scores_rating}
-                onChange={handleReview_scores_rating}
+                onChange={(e) => setReview_scores_rating(e.target.value)}
               />
             </div>
           </div>
-          <button type="submit" className="add-property-button">
-            Add Property
-          </button>
+          <Link to="/" id="back-home">
+            <button type="submit" className="add-property-button">
+              Edit Property
+            </button>
+          </Link>
         </div>
       </form>
     </div>
