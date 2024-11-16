@@ -58,3 +58,9 @@ _(https://nest-and-rest.netlify.app/)_
 
 - Fully responsive with Toobar with easy menu access.</br>
   <img src="src/assets/readMeImgs/mobile-version.jpg" alt="Mobile Version" width="200"/></br>
+
+## Local Deployment and Run Instructions
+
+- Git Clone the project with 'git clone https://github.com/nehais/apartment-rental.git'.
+- Install the libraries with 'npm install'.
+- Run the project locally with 'npm run dev'.
