@@ -10,9 +10,11 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
   const [searchStr, setSearchStr] = useState();
   const [filteredApts, setFilteredApts] = useState([...apartList]);
   const [ascSort, setAscSort] = useState(true);
+  const [hasResults, setHasResults] = useState(0);
   const itemRefs = useRef({});
 
   useEffect(() => {
+    /*Search filter added here*/
     let tempApts = [...apartList];
     if (searchStr) {
       tempApts = apartList.filter((oneApartment) => {
@@ -22,6 +24,7 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
       });
     }
     setFilteredApts([...tempApts]);
+    setHasResults[tempApts.length];
   }, [searchStr, apartList]);
 
   useEffect(() => {
@@ -38,6 +41,16 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
     }
   }, [modifiedID]);
 
+  /* Teresa Sort=>
+    1. New sort func
+  arr.sort((a,b) => {
+    //check null
+    //remove $
+    return (a.price - b.price)
+    
+    })
+    2. Sort on button click
+   */
   return (
     <div className="main-content">
       <div className="search-area">
@@ -65,6 +78,12 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
             />
           );
         })}
+
+        {!hasResults && searchStr && (
+          <p className="error-message">
+            Nada in this cozy corner—try adjusting!
+          </p>
+        )}
       </div>
     </div>
   );

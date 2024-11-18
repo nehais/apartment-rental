@@ -21,6 +21,7 @@
   border-radius: 10px;
   background-color: #a2b39c2a;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .sort-button:hover {
@@ -50,6 +51,11 @@
   width: 100%;
   margin-top: 5px;
   overflow-y: scroll;
+}
+
+.error-message {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .rental-card {
