@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AddNewListing = ({ apartList, setApartList }) => {
-  /*@Teresa : Add all the fields here & change the form too with formData.xyzFieldname & onChange event to handleChange. I have added the correct event below*/
+const AddNewListing = ({ apartList, setApartList, setModifiedID }) => {
   const [formData, setFormData] = useState({
     picture_url: "",
     name: "",
@@ -35,6 +34,7 @@ const AddNewListing = ({ apartList, setApartList }) => {
     formData.id = apartList.length + 2;
 
     setApartList([...apartList, formData]);
+    setModifiedID(formData.id);
     navigate("/");
   }
   return (
@@ -217,6 +217,8 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 type="number"
                 min={1}
                 max={2000}
+                step="0.01"
+                pattern="^\d+(?:\.\d{1,2})?$"
                 id="price"
                 name="price"
                 placeholder="Price per night"
@@ -289,6 +291,8 @@ const AddNewListing = ({ apartList, setApartList }) => {
                 type="number"
                 min={1}
                 max={5}
+                step="0.01"
+                pattern="^\d+(?:\.\d{1,2})?$"
                 id="review_scores_rating"
                 name="review_scores_rating"
                 placeholder="Review Scores Rating"

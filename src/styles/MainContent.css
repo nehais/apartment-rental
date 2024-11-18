@@ -12,6 +12,21 @@
   justify-content: center;
 }
 
+.sort-button {
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  border-radius: 10px;
+  background-color: #a2b39c2a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sort-button:hover {
+  transform: scale(1.1);
+}
+
 .search-bar {
   background-image: url("../assets/search.jpg");
   background-repeat: no-repeat;
@@ -344,6 +359,19 @@
     width: 16%;
   }
 
+  .delete-button {
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .edit-button {
+    right: 25px;
+    background-size: 30px;
+
+    height: 30px;
+    width: 30px;
+  }
   .rental-details {
     align-items: center;
     width: 100%;
@@ -390,10 +418,27 @@
   .col-field {
     width: 60%;
   }
+
+  .search-bar {
+    width: 70%;
+  }
 }
 
 /*Tablet Screen*/
 @media screen and (max-device-width: 768px) and (min-width: 426px) {
+  .delete-button {
+    background-size: 25px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .edit-button {
+    right: 20px;
+    background-size: 25px;
+
+    height: 25px;
+    width: 25px;
+  }
   .rental-details {
     align-items: center;
     width: 100%;
@@ -430,6 +475,9 @@
     width: 30%;
   }
   .col-field {
+    width: 70%;
+  }
+  .search-bar {
     width: 70%;
   }
 }

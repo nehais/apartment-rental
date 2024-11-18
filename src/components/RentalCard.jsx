@@ -1,11 +1,11 @@
-import React from "react";
+import { forwardRef } from "react";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import { Link } from "react-router-dom";
 
-function RentalCard({ apartment, apartList, setApartList }) {
+const RentalCard = forwardRef(({ apartment, apartList, setApartList }, ref) => {
   return (
-    <div className="rental-card">
+    <div className="rental-card" ref={ref}>
       <Link to={`/rentalDetails/${apartment.id}`}>
         <img
           src={apartment.picture_url}
@@ -34,11 +34,7 @@ function RentalCard({ apartment, apartList, setApartList }) {
       </Link>
 
       <Link to={`/updateListing/${apartment.id}`}>
-        <EditButton
-          id={apartment.id}
-          apartList={apartList}
-          setApartList={setApartList}
-        />
+        <EditButton />
       </Link>
 
       <DeleteButton
@@ -48,6 +44,6 @@ function RentalCard({ apartment, apartList, setApartList }) {
       />
     </div>
   );
-}
+});
 
 export default RentalCard;

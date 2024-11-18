@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const UpdateListing = ({ apartList, setApartList }) => {
+const UpdateListing = ({ apartList, setApartList, setModifiedID }) => {
   const { apartmentId } = useParams();
   const [apartmentToUpdate, setApartmentToUpdate] = useState({
     picture_url: "",
@@ -55,6 +55,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
     });
 
     setApartList(updatedApartments);
+    setModifiedID(Number(apartmentId));
 
     navigate("/");
   }
@@ -313,6 +314,8 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 type="number"
                 min={1}
                 max={5}
+                step="0.01"
+                pattern="^\d+(?:\.\d{1,2})?$"
                 id="review_scores_rating"
                 name="review_scores_rating"
                 placeholder="Review Scores Rating"

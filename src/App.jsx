@@ -19,6 +19,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [apartList, setApartList] = useState(ApartmentListings);
+  const [modifiedID, setModifiedID] = useState(0);
 
   return (
     <div className="App">
@@ -31,7 +32,11 @@ function App() {
           <Route
             path="/"
             element={
-              <MainContent apartList={apartList} setApartList={setApartList} />
+              <MainContent
+                apartList={apartList}
+                setApartList={setApartList}
+                modifiedID={modifiedID}
+              />
             }
           />
 
@@ -45,6 +50,7 @@ function App() {
               <AddNewListing
                 apartList={apartList}
                 setApartList={setApartList}
+                setModifiedID={setModifiedID}
               />
             }
           />
@@ -54,6 +60,7 @@ function App() {
               <UpdateListing
                 apartList={apartList}
                 setApartList={setApartList}
+                setModifiedID={setModifiedID}
               />
             }
           />

@@ -1,16 +1,5 @@
-const EditButton = ({ id, apartList, setApartList }) => {
-  function editRental() {
-    console.log("Edit Clicked");
-  }
-
-  return (
-    <div
-      className="edit-button"
-      onClick={() => {
-        editRental();
-      }}
-    ></div>
-  );
+const EditButton = ({}) => {
+  return <div className="edit-button"></div>;
 };
 
 export default EditButton;
