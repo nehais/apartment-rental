@@ -23,9 +23,10 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
         );
       });
     }
+    tempApts = sortByPrice(tempApts, ascSort);
     setFilteredApts([...tempApts]);
     setHasResults[tempApts.length];
-  }, [searchStr, apartList]);
+  }, [searchStr, apartList, ascSort]);
 
   useEffect(() => {
     if (modifiedID) {
@@ -51,6 +52,34 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
     })
     2. Sort on button click
    */
+  function sortByPrice(apartments, ascending) {
+    return apartments.sort((a, b) => {
+      const priceA =
+        a.price && a.price.toLowerCase() === "sold out"
+          ? null
+          : parseFloat((a.price || "").replace("$", "")) || 0;
+      const priceB =
+        b.price && b.price.toLowerCase() === "sold out"
+          ? null
+          : parseFloat((b.price || "").replace("$", "")) || 0;
+      if (priceA === null && priceB === null) return 0;
+
+      if (priceA === null) return 1;
+
+      if (priceB === null) return -1;
+
+      if (ascending) {
+        if (priceA < priceB) return -1;
+        if (priceA > priceB) return 1;
+        return 0;
+      } else {
+        if (priceA > priceB) return -1;
+        if (priceA < priceB) return 1;
+        return 0;
+      }
+    });
+  }
+
   return (
     <div className="main-content">
       <div className="search-area">
@@ -62,6 +91,7 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
           }}
           onClick={() => {
             setAscSort(!ascSort);
+            console.log("Sort order toggled:", !ascSort);
           }}
         ></div>
       </div>
