@@ -71,11 +71,13 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="text"
+                maxLength={55}
                 id="name"
                 name="name"
-                placeholder="Apartment Title"
+                placeholder="Apartment Name"
                 value={apartmentToUpdate.name}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -90,8 +92,10 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 name="property_type"
                 value={apartmentToUpdate.property_type}
                 onChange={handleChange}
+                required
                 className="field"
               >
+                <option value="">----Please Select----</option>
                 <option value="Private Room">Private Room</option>
                 <option value="Whole Apartment">Whole Apartment</option>
               </select>
@@ -109,6 +113,7 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 placeholder="Apartment Image URL"
                 value={apartmentToUpdate.picture_url}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -120,11 +125,13 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="text"
+                maxLength={1000}
                 id="description"
                 name="description"
                 placeholder="Apartment Description"
                 value={apartmentToUpdate.description}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -136,11 +143,13 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="text"
+                maxLength={100}
                 id="neighbourhood"
                 name="neighbourhood"
-                placeholder="Neighbourhood"
+                placeholder="Neighbourhood Location"
                 value={apartmentToUpdate.neighbourhood}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -152,11 +161,14 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="number"
+                min={1}
+                max={20}
                 id="accommodates"
                 name="accommodates"
-                placeholder="Apartment Accommodation No."
+                placeholder="Guest Count"
                 value={apartmentToUpdate.accommodates}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -168,11 +180,14 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="number"
+                min={1}
+                max={20}
                 id="bathrooms"
                 name="bathrooms"
                 placeholder="No. of Bathrooms"
                 value={apartmentToUpdate.bathrooms}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -184,11 +199,14 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="number"
+                min={1}
+                max={20}
                 id="bedrooms"
                 name="bedrooms"
                 placeholder="No. of Bedrooms"
                 value={apartmentToUpdate.bedrooms}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -200,11 +218,14 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="number"
+                min={1}
+                max={20}
                 id="beds"
                 name="beds"
                 placeholder="No. of Beds"
                 value={apartmentToUpdate.beds}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
@@ -216,50 +237,59 @@ const UpdateListing = ({ apartList, setApartList }) => {
             <div className="col-field">
               <input
                 type="number"
+                min={1}
+                max={2000}
+                step="0.01"
+                pattern="^\d+(?:\.\d{1,2})?$"
                 id="price"
                 name="price"
                 placeholder="Price per night"
                 value={apartmentToUpdate.price}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
           </div>
           <div className="row">
             <div className="col-label">
-              <label htmlFor="host_name">Host Name</label>
+              <label htmlFor="host_name">Your Name</label>
             </div>
             <div className="col-field">
               <input
                 type="text"
+                maxLength={20}
                 id="host_name"
                 name="host_name"
                 placeholder="Host Name"
                 value={apartmentToUpdate.host_name}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
           </div>
           <div className="row">
             <div className="col-label">
-              <label htmlFor="host_about">Host About</label>
+              <label htmlFor="host_about">Your Info</label>
             </div>
             <div className="col-field">
               <input
                 type="text"
+                maxLength={500}
                 id="host_about"
                 name="host_about"
                 placeholder="Tell us about yourself"
                 value={apartmentToUpdate.host_about}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
           </div>
           <div className="row">
             <div className="col-label">
-              <label htmlFor="host_thumbnail_url">Host Thumbnail Url</label>
+              <label htmlFor="host_thumbnail_url">Your Picture</label>
             </div>
             <div className="col-field">
               <input
@@ -269,22 +299,26 @@ const UpdateListing = ({ apartList, setApartList }) => {
                 placeholder="Host Thumbnail Url"
                 value={apartmentToUpdate.host_thumbnail_url}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>
           </div>
           <div className="row">
             <div className="col-label">
-              <label htmlFor="review_scores_rating">Review Scores Rating</label>
+              <label htmlFor="review_scores_rating">Rating [1-5]</label>
             </div>
             <div className="col-field">
               <input
                 type="number"
+                min={1}
+                max={5}
                 id="review_scores_rating"
                 name="review_scores_rating"
                 placeholder="Review Scores Rating"
                 value={apartmentToUpdate.review_scores_rating}
                 onChange={handleChange}
+                required
                 className="field"
               />
             </div>

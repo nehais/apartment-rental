@@ -4,7 +4,9 @@
 
 ## Description
 
-The website is designed as one-stop destination for finding the perfect apartment. User can search through apartment list as well as delete or update them.
+The website is designed as one-stop destination for finding the perfect apartment.<br>
+Users can search through apartment list and put the apartments they like as favourites, as well as delete them.<br>
+As a host you can add or update your property
 
 ## Tech stack
 
@@ -12,7 +14,7 @@ Built with React JS, CSS & HTML.
 
 ## Design
 
-The website is designed keeping the main elements in focus for easy to understand user interface.
+The website is designed keeping the main elements in focus, so it's easier to understand the user interface.
 
 ## Features
 
