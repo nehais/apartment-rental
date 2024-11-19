@@ -79,6 +79,7 @@
 
 .rental-card:hover {
   transform: scale(1.02);
+  background-color: #14404d2a;
 }
 
 #card-name-title {
