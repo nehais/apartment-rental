@@ -23,7 +23,7 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
         );
       });
     }
-    tempApts = sortByPrice(tempApts, ascSort);
+    tempApts = sortByPrice(tempApts);
     setFilteredApts([...tempApts]);
     setHasResults[tempApts.length];
   }, [searchStr, apartList, ascSort]);
@@ -42,40 +42,22 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
     }
   }, [modifiedID]);
 
-  /* Teresa Sort=>
-    1. New sort func
-  arr.sort((a,b) => {
-    //check null
-    //remove $
-    return (a.price - b.price)
-    
-    })
-    2. Sort on button click
-   */
-  function sortByPrice(apartments, ascending) {
+  function sortByPrice(apartments) {
     return apartments.sort((a, b) => {
-      const priceA =
-        a.price && a.price.toLowerCase() === "sold out"
-          ? null
-          : parseFloat((a.price || "").replace("$", "")) || 0;
-      const priceB =
-        b.price && b.price.toLowerCase() === "sold out"
-          ? null
-          : parseFloat((b.price || "").replace("$", "")) || 0;
-      if (priceA === null && priceB === null) return 0;
+      let nullValue = ascSort ? 100000 : 0; //Keep null values at the end
+      const priceA = a.price
+        ? parseFloat((a.price || "").replace("$", ""))
+        : nullValue;
+      const priceB = b.price
+        ? parseFloat((b.price || "").replace("$", ""))
+        : nullValue;
 
-      if (priceA === null) return 1;
-
-      if (priceB === null) return -1;
-
-      if (ascending) {
+      if (ascSort) {
         if (priceA < priceB) return -1;
         if (priceA > priceB) return 1;
-        return 0;
       } else {
         if (priceA > priceB) return -1;
         if (priceA < priceB) return 1;
-        return 0;
       }
     });
   }

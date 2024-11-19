@@ -1,9 +1,21 @@
 import { forwardRef } from "react";
+import LikeButton from "./LikeButton";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import { Link } from "react-router-dom";
 
 const RentalCard = forwardRef(({ apartment, apartList, setApartList }, ref) => {
+  function handleLike() {
+    const updatedApartments = apartList.map((oneApartment) => {
+      if (oneApartment.id === apartment.id) {
+        oneApartment.liked = oneApartment.liked ? false : true;
+      }
+
+      return oneApartment;
+    });
+    setApartList([...updatedApartments]);
+  }
+
   return (
     <div className="rental-card" ref={ref}>
       <Link to={`/rentalDetails/${apartment.id}`}>
@@ -32,6 +44,8 @@ const RentalCard = forwardRef(({ apartment, apartList, setApartList }, ref) => {
           <h4 className="sold-out">Sold out</h4>
         )}
       </Link>
+
+      <LikeButton apartment={apartment} handleLike={handleLike} />
 
       <Link to={`/updateListing/${apartment.id}`}>
         <EditButton />
