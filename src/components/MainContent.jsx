@@ -7,7 +7,7 @@ import AscSortIcon from "../assets/asc-sort.png";
 import DescSortIcon from "../assets/desc-sort.png";
 
 const MainContent = ({ apartList, setApartList, modifiedID }) => {
-  const [searchStr, setSearchStr] = useState();
+  const [searchStr, setSearchStr] = useState("");
   const [filteredApts, setFilteredApts] = useState([...apartList]);
   const [ascSort, setAscSort] = useState(true);
   const [hasResults, setHasResults] = useState(0);

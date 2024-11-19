@@ -20,8 +20,6 @@ const UpdateListing = ({ apartList, setApartList, setModifiedID }) => {
     host_about: "",
   });
 
-  console.log(apartList, apartmentId);
-
   useEffect(() => {
     let appt = apartList.find((oneApartment) => {
       return oneApartment.id === Number(apartmentId);
@@ -31,7 +29,27 @@ const UpdateListing = ({ apartList, setApartList, setModifiedID }) => {
         ? Number(appt.price.slice(1))
         : ""
       : appt.price;
-    setApartmentToUpdate(appt);
+    if (appt) {
+      // Normalize fields to avoid null or undefined
+      const normalizedAppt = {
+        ...appt,
+        picture_url: appt.picture_url || "",
+        name: appt.name || "",
+        host_name: appt.host_name || "",
+        description: appt.description || "",
+        property_type: appt.property_type || "",
+        accommodates: appt.accommodates || 1,
+        bathrooms: appt.bathrooms || 1,
+        bedrooms: appt.bedrooms || 1,
+        beds: appt.beds || 1,
+        neighbourhood: appt.neighbourhood || "",
+        price: appt.price || 1,
+        review_scores_rating: appt.review_scores_rating || 1,
+        host_thumbnail_url: appt.host_thumbnail_url || "",
+        host_about: appt.host_about || "",
+      };
+      setApartmentToUpdate(normalizedAppt);
+    }
   }, []);
 
   function handleChange(e) {

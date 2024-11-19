@@ -7,7 +7,7 @@
 
 .toolbar-menu {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 33.3vw;
   background-color: #a2b39c2a;
   border-radius: 5px;
