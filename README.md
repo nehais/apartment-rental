@@ -44,15 +44,16 @@ _(https://nest-and-rest.netlify.app/)_
 
   - Search: The list can be search on the Apartment name.
     <img src="src/assets/readMeImgs/search-list.jpg" alt="Search List" width="400"/></br>
-  - Sort: The list can be sorted on the Price in ascending or descending order on the click of Sort buttons.
-    <img src="src/assets/readMeImgs/sort-list.jpg" alt="Sort List" width="400"/></br>
+  - Sort: The list can be sorted on the Price in ascending or descending order on the click of Sort button.
 
-  The Apartment List is built of Apartment Cards list. Every Card is built of below sections.
+  The Apartment List is built of Apartment Cards list.</br>
+  <img src="src/assets/readMeImgs/rental-card.jpg" alt="Like Rental" width="300"/></br>
+
+  Every Card is built of below sections.
 
   - Image: A huge image of the apartment for clear view.
   - Apartment Info: Below image the apartment's title, location, rating and price are displayed. If the apartment is sold out then 'Sold out' text is displayed instead of price.
-  - Like Icon: Displayed on top left corner of the Card. On clicking this button the respective apartment is liked & will be listed in the Favourite Apartment List</br>
-    <img src="src/assets/readMeImgs/like-rental.JPG" alt="Like Rental" width="400"/></br>
+  - Like Icon: Displayed on top left corner of the Card. On clicking this button the respective apartment is liked & will be listed in the Favourite Apartment List.
   - Edit Icon: Displayed on top right corner of the Card. On clicking this button the respective apartment is loaded in Edit mode for update.</br>
     <img src="src/assets/readMeImgs/update-rental.JPG" alt="Update Rental" width="400"/></br>
   - Delete Icon: Displayed on top right corner of the Card. On clicking this button the respective apartment is deleted from the list.
@@ -65,7 +66,7 @@ _(https://nest-and-rest.netlify.app/)_
 - Add your Nest: This menu is available in both Toolbar and Sidebar. On clicking this menu any time, the Main-content area is loaded with a Form for new apartment entry.</br>
   <img src="src/assets/readMeImgs/add-rental.JPG" alt="Add Rental" width="400"/></br>
 
-- Favourites: This menu is available in both Toolbar and Sidebar. On clicking this menu any time, the Main-content area is loaded Apartment List marked as favourite using the Like button.</br>
+- Favourite Nests: This menu is available in both Toolbar and Sidebar. On clicking this menu any time, the Main-content area is loaded with Apartment List marked as favourite using the Like button.</br>
   <img src="src/assets/readMeImgs/favourite-list.JPG" alt="Favourite List" width="400"/></br>
 - About Menu: This menu is available in both Toolbar and Sidebar. This page provides details about the website and the designers.</br>
 

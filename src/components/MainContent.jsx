@@ -26,7 +26,7 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
     }
     tempApts = sortByPrice(tempApts);
     setFilteredApts([...tempApts]);
-    setHasResults[tempApts.length];
+    setHasResults(tempApts.length);
   }, [searchStr, apartList, ascSort]);
 
   useEffect(() => {
@@ -96,11 +96,11 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
               setApartList={setApartList}
               setDeleteMessage={setDeleteMessage}
               ref={(el) => (itemRefs.current[apartment.id] = el)}
+              viewMode={false}
             />
           );
         })}
-
-        {!hasResults && searchStr && (
+        {hasResults === 0 && searchStr && (
           <p className="error-message">
             Nada in this cozy corner—try adjusting!
           </p>

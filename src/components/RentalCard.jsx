@@ -5,7 +5,7 @@ import DeleteButton from "./DeleteButton";
 import { Link } from "react-router-dom";
 
 const RentalCard = forwardRef(
-  ({ apartment, apartList, setApartList, setDeleteMessage }, ref) => {
+  ({ apartment, apartList, setApartList, setDeleteMessage, viewMode }, ref) => {
     function handleLike() {
       const updatedApartments = apartList.map((oneApartment) => {
         if (oneApartment.id === apartment.id) {
@@ -46,18 +46,24 @@ const RentalCard = forwardRef(
           )}
         </Link>
 
-        <LikeButton apartment={apartment} handleLike={handleLike} />
+        {!viewMode && (
+          <LikeButton apartment={apartment} handleLike={handleLike} />
+        )}
 
-        <Link to={`/updateListing/${apartment.id}`}>
-          <EditButton />
-        </Link>
+        {!viewMode && (
+          <Link to={`/updateListing/${apartment.id}`}>
+            <EditButton />
+          </Link>
+        )}
 
-        <DeleteButton
-          id={apartment.id}
-          apartList={apartList}
-          setApartList={setApartList}
-          setDeleteMessage={setDeleteMessage}
-        />
+        {!viewMode && (
+          <DeleteButton
+            id={apartment.id}
+            apartList={apartList}
+            setApartList={setApartList}
+            setDeleteMessage={setDeleteMessage}
+          />
+        )}
       </div>
     );
   }
