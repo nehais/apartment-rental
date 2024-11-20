@@ -8,6 +8,7 @@ import { useState } from "react";
 import PageNotFound from "./components/PageNotFound";
 import RentalDetails from "./components/RentalDetails";
 import AddNewListing from "./components//AddNewListing";
+import Favourite from "./components//Favourite";
 import UpdateListing from "./components//UpdateListing";
 import AboutUs from "./components/AboutUs";
 
@@ -53,6 +54,10 @@ function App() {
                 setModifiedID={setModifiedID}
               />
             }
+          />
+          <Route
+            path="/favourite"
+            element={<Favourite apartList={apartList} />}
           />
           <Route
             path="/updateListing/:apartmentId"

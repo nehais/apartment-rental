@@ -2,6 +2,7 @@ import "../styles/Sidebar.css";
 import HomeIcon from "../assets/home.png";
 import AddIcon from "../assets/add.png";
 import AboutIcon from "../assets/about.png";
+import FavouriteIcon from "../assets/favourite.png";
 
 import { Link } from "react-router-dom";
 
@@ -19,6 +20,16 @@ const Sidebar = () => {
           <img src={AddIcon} alt="Add Icon" className="sidebar-icon" />
         </div>
         <span>Add your Nest</span>
+      </Link>
+      <Link to="/favourite" className="sidebar-menu">
+        <div>
+          <img
+            src={FavouriteIcon}
+            alt="Favourite Icon"
+            className="sidebar-icon"
+          />
+        </div>
+        <span>Favourite Nests</span>
       </Link>
       <Link to="/aboutUs" className="sidebar-menu">
         <div>
