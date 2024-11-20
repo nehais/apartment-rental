@@ -7,6 +7,7 @@ import AscSortIcon from "../assets/asc-sort.png";
 import DescSortIcon from "../assets/desc-sort.png";
 
 const MainContent = ({ apartList, setApartList, modifiedID }) => {
+  const [deleteMessage, setDeleteMessage] = useState("");
   const [searchStr, setSearchStr] = useState("");
   const [filteredApts, setFilteredApts] = useState([...apartList]);
   const [ascSort, setAscSort] = useState(true);
@@ -64,6 +65,13 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
 
   return (
     <div className="main-content">
+      {
+        <div
+          className={deleteMessage ? "delete-message show" : "delete-message"}
+        >
+          <span>{deleteMessage}</span>
+        </div>
+      }
       <div className="search-area">
         <SearchBar searchStr={searchStr} setSearchStr={setSearchStr} />
         <div
@@ -86,6 +94,7 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
               apartment={apartment}
               apartList={apartList}
               setApartList={setApartList}
+              setDeleteMessage={setDeleteMessage}
               ref={(el) => (itemRefs.current[apartment.id] = el)}
             />
           );

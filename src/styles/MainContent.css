@@ -53,6 +53,72 @@
   overflow-y: scroll;
 }
 
+.delete-message {
+  visibility: hidden;
+  width: 200px;
+  height: 40px;
+  background-color: #0000008f;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+
+  span {
+    font-size: 1em;
+    color: white;
+  }
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.9s 1.5s;
+  animation: fadein 0.5s, fadeout 0.9s 1.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 26px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 26px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 26px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 26px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
 .error-message {
   font-size: 2em;
   font-weight: bold;
