@@ -21,6 +21,7 @@ import Footer from "./components/Footer";
 function App() {
   const [apartList, setApartList] = useState(ApartmentListings);
   const [modifiedID, setModifiedID] = useState(0);
+  const [ascSort, setAscSort] = useState(true);
 
   return (
     <div className="App">
@@ -37,6 +38,8 @@ function App() {
                 apartList={apartList}
                 setApartList={setApartList}
                 modifiedID={modifiedID}
+                ascSort={ascSort}
+                setAscSort={setAscSort}
               />
             }
           />

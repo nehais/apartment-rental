@@ -6,11 +6,16 @@ import SearchBar from "./SearchBar";
 import AscSortIcon from "../assets/asc-sort.png";
 import DescSortIcon from "../assets/desc-sort.png";
 
-const MainContent = ({ apartList, setApartList, modifiedID }) => {
+const MainContent = ({
+  apartList,
+  setApartList,
+  modifiedID,
+  ascSort,
+  setAscSort,
+}) => {
   const [deleteMessage, setDeleteMessage] = useState("");
   const [searchStr, setSearchStr] = useState("");
   const [filteredApts, setFilteredApts] = useState([...apartList]);
-  const [ascSort, setAscSort] = useState(true);
   const [hasResults, setHasResults] = useState(0);
   const itemRefs = useRef({});
 
@@ -30,8 +35,8 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
   }, [searchStr, apartList, ascSort]);
 
   useEffect(() => {
-    if (modifiedID) {
-      let latestApartment = apartList.find((oneApartment) => {
+    if (modifiedID && filteredApts.length > 0) {
+      let latestApartment = filteredApts.find((oneApartment) => {
         return oneApartment.id === modifiedID;
       });
       if (latestApartment && itemRefs.current[latestApartment.id]) {
@@ -41,7 +46,7 @@ const MainContent = ({ apartList, setApartList, modifiedID }) => {
         });
       }
     }
-  }, [modifiedID]);
+  }, [modifiedID, filteredApts]);
 
   function sortByPrice(apartments) {
     return apartments.sort((a, b) => {
